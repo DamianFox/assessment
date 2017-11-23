@@ -10,13 +10,17 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css" >
     </head>
-    <body>
+    <body ng-app="myApp">
         <div class="container">
-            <form class="form-signin">
+            <form class="form-signin" ng-submit="submit()" ng-controller="NumberController">
                 <label for="inputNumber" class="sr-only">Number</label>
-                <input type="number" id="inputNumber" class="form-control" placeholder="Number" required autofocus>
+                <input type="number" name="number" ng-model="number" id="inputNumber" class="form-control" placeholder="Number" required autofocus>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+                <p class="text-center">{{showNumber}}</p>
             </form>
-        </div> <!-- /container -->
+        </div>  <!-- /container -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
