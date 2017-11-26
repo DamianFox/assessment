@@ -38,7 +38,6 @@ function convert(num) {
     ed = (e!=0) ? ""+e+d : "";
     num_ed = (exceptions[ed]) ? exceptions[ed] : (decades[e]+" "+digits[d]);
     name_ed = (num_ed!=" ") ? (num_ed+" "+largenumber[1])+" " : "";
-    new_name_ed = name_ed.replace(num_ed, "");
 
     f = (num[l-5]) ? num[l-5] : 0;
     name_f = (f!=0) ? digits[f]+" "+largenumber[0]+" " : " ";
@@ -46,13 +45,7 @@ function convert(num) {
 
     g = (num[l-6]) ? num[l-6] : 0;
     name_g = (g!=0) ? digits[g]+" "+largenumber[2]+" " : " ";
-    name_gfed = (name_g!=" ") ? name_g+" " : " ";
-
-    h = (num[l-7]) ? num[l-7] : 0;
-    hg = (h!=0) ? ""+h+g : "";
-    num_hg = (exceptions[hg]) ? exceptions[hg] : (decades[h]+" "+digits[g]);
-    name_hg = (num_hg!=" ") ? (num_hg+" "+largenumber[2])+" " : "";
-    
+    name_gfed = (name_g!=" ") ? name_g+" " : " ";    
 
     if(l<=1){
         return name_ab;
@@ -64,48 +57,76 @@ function convert(num) {
     } else if(l===3) {
 
         if(c!=0){
-            string = name_d+name_c+name_ab;
+            string = (ba!=="00") ? 
+                name_d+name_c+" and "+name_ab : 
+                name_d+name_c+name_ab;
         } else {
-            string = name_ed+name_ab
+            string = (ba!=="00") ? 
+                name_ed+" and "+name_ab : 
+                name_ed+name_ab;
         }
 
         return string;
     } else if(l===4) {
 
         if(d!=0){
-            string = name_ed+name_c+name_ab;
+            string = (ba!=="00") ? 
+                name_ed+name_c+" and "+name_ab : 
+                name_ed+name_c+name_ab;
         } else if(c!=0){
-            string = name_ed+name_c+name_ab;
+            string = (ba!=="00") ? 
+                name_ed+name_c+" and "+name_ab : 
+                name_ed+name_c+name_ab;
         } else {
-            string = name_ed+name_ab
+            string = (ba!=="00") ? 
+                name_ed+" and "+name_ab : 
+                name_ed+name_ab;
         }
 
         return string;
     } else if(l===5) {
 
         if(e!=0){
-            string = name_fed+name_c+name_ab;
+            string = (ba!=="00") ? 
+                name_fed+name_c+" and "+name_ab : 
+                name_fed+name_c+name_ab;
         } else if(d!=0){
-            string = name_fed+name_c+name_ab;
+            string = (ba!=="00") ? 
+                name_fed+name_c+" and "+name_ab : 
+                name_fed+name_c+name_ab;
         } else if(c!=0){
-            string = name_f+largenumber[1]+" "+name_c+name_ab
+            string = (ba!=="00") ? 
+                name_f+largenumber[1]+" "+name_c+" and "+name_ab : 
+                name_f+largenumber[1]+" "+name_c+name_ab;
         } else {
-            string = name_g+name_ab
+            string = (ba!=="00") ? 
+                name_g+" and "+name_ab :
+                name_g+name_ab;
         }
 
         return string;
     } else if(l===6) {
 
         if(f!=0){
-            string = name_g+name_fed+name_c+name_ab
+            string = (ba!=="00") ? 
+                name_g+name_fed+name_c+" and "+name_ab : 
+                name_fed+name_c+name_ab;
         } else if(e!=0){
-            string = name_g+name_ed+name_c+name_ab
+            string = (ba!=="00") ? 
+                name_g+name_ed+name_c+" and "+name_ab : 
+                name_g+name_ed+name_c+name_ab;
         } else if(d!=0){
-            string = name_g+name_d+name_c+name_ab
+            string = (ba!=="00") ? 
+                name_g+name_d+name_c+" and "+name_ab : 
+                name_g+name_d+name_c+name_ab;
         } else if(c!=0){
-            string = name_g+name_c+name_ab
+            string = (ba!=="00") ? 
+                name_g+name_c+" and "+name_ab : 
+                name_g+name_c+name_ab;
         } else {
-            string = name_g+name_ab
+            string = (ba!=="00") ? 
+                name_g+" and "+name_ab : 
+                name_g+name_ab;
         }
 
         return string;
