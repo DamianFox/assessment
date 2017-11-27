@@ -45,7 +45,6 @@ function convert(num) {
 
     g = (num[l-6]) ? num[l-6] : 0;
     name_g = (g!=0) ? digits[g]+" "+largenumber[2]+" " : " ";
-    name_gfed = (name_g!=" ") ? name_g+" " : " ";    
 
     if(l<=1){
         return name_ab;
@@ -110,7 +109,7 @@ function convert(num) {
         if(f!=0){
             string = (ba!=="00") ? 
                 name_g+name_fed+name_c+" and "+name_ab : 
-                name_fed+name_c+name_ab;
+                name_g+name_fed+name_c+name_ab;
         } else if(e!=0){
             string = (ba!=="00") ? 
                 name_g+name_ed+name_c+" and "+name_ab : 
