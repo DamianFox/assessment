@@ -26,11 +26,6 @@ function UsersList($route, $scope, $filter, userDataFactory, PagerService){
         $scope.items = $scope.users.slice($scope.pager.startIndex, $scope.pager.endIndex + 1);
     }
 
-    // Get the number of pages from the number of users
-  	$scope.numberOfPages = function(){
-        return Math.ceil($scope.users.length/$scope.pageSize);                
-    }
-
     // Change the status of the user
     $scope.changeStatus = function(id, status){
 
@@ -114,11 +109,3 @@ function PagerService() {
         };
     }
 }
-
-// startFrom filter
-app.filter('startFrom', function() {
-	return function(input, start) {
-    	start = +start; //parse to int
-    	return input.slice(start);
-	}
-});
