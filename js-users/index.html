@@ -16,12 +16,12 @@
         	<a id="logo-container" href="#!/" class="brand-logo">Js Users</a>
     		<ul class="right hide-on-med-and-down">
       			<li>
-            		<a href="#!/add">Add</a>
+            		<a href="#!/new">New</a>
   				</li>
     		</ul>
     		<ul id="nav-mobile" class="side-nav">
           		<li>
-        			<a href="#!/add">Add</a>
+        			<a href="#!/new">New</a>
           		</li>
         	</ul>
         	<a href="#" data-activates="nav-mobile" class="button-collapse">
@@ -30,7 +30,9 @@
 		</div>
     </nav>
     <div class="container">
-  		<div ng-view=""></div>
+    	<div class="row">
+  			<div ng-view=""></div>
+  		</div>
     </div>
 	
 
@@ -44,6 +46,7 @@
   	<script type="text/javascript" src="app/app.js"></script>
   	<script type="text/javascript" src="app/main/main.js"></script>
   	<script type="text/javascript" src="app/user-data-factory/user-data-factory.js"></script>
+  	<script type="text/javascript" src="app/newUser/newUser.js"></script>
   
 </body>
 </html>

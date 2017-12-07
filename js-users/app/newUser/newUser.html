@@ -1,0 +1,20 @@
+<div class="page-header">
+    <h2>New User</h2>
+</div>
+<form class="col s12" ng-submit="submitNewUser()" ng-controller="NewUserCtrl">
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="first_name" ng-model="first_name" type="text" class="validate">
+            <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="last_name" ng-model="last_name" type="text" class="validate">
+            <label for="last_name">Last Name</label>
+        </div>
+        <div class="input-field col s6">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </div>
+</form>

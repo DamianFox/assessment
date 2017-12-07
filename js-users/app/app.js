@@ -1,4 +1,4 @@
-var app = angular.module("Js-Users-App", ["ngRoute", 'angularUtils.directives.dirPagination']).config(config);
+var app = angular.module("Js-Users-App", ["ngRoute"]).config(config);
 
 function config($routeProvider) {
 	
@@ -6,8 +6,8 @@ function config($routeProvider) {
 	.when("/", {
 	  templateUrl: "/app/main/main.html"
 	})
-	.when("/add", {
-	  templateUrl: "/app/addUser/addUser.html"
+	.when("/new", {
+	  templateUrl: "/app/newUser/newUser.html"
 	})
 	.otherwise({
 	  redirectTo: "/"
