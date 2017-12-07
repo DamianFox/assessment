@@ -1,28 +1,45 @@
 angular.module('Js-Users-App').controller('UsersList', UsersList);
 
-// UsersList.$inject = ['$scope', 'userDataFactory'];
-
-function UsersList($scope, $filter, userDataFactory){
+function UsersList($route, $scope, $filter, userDataFactory){
 	$scope.users = []
 	$scope.currentPage = 0;
     $scope.pageSize = 10;
-    $scope.q = '';
 
 	// Get the list of users
  	userDataFactory.userList().then(function(response) {
     	$scope.users = response.data;
   	});
 
-  	$scope.numberOfPages=function(){
+    // Get the number of pages from the number of users
+  	$scope.numberOfPages = function(){
         return Math.ceil($scope.users.length/$scope.pageSize);                
     }
 
-    $scope.changeStatus=function(status){
-        console.log(status);
+    // Change the status of the user
+    $scope.changeStatus = function(id, status){
+
+        if(status == "locked"){
+            newStatus = "active";
+        } else {
+            newStatus = "locked";
+        }
+
+        var putData = {
+          id: id,
+          status: newStatus
+        };
+
+        userDataFactory.editUser(id, putData).then(function(response) {
+            if (response.status === 204) {
+                $route.reload();
+            }
+        }).catch(function(error) {
+            console.log(error);
+        });
     }
 }
 
-// Let's make a startFrom filter
+// startFrom filter
 app.filter('startFrom', function() {
 	return function(input, start) {
     	start = +start; //parse to int

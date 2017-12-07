@@ -2,17 +2,17 @@ angular.module('Js-Users-App').factory('userDataFactory', userDataFactory);
 
 function userDataFactory($http) {
     return {
-        userList: userList
-        /*editUser: editUser*/
+        userList: userList,
+        editUser: editUser
     };
 
     function userList() {
         return $http.get("http://js-assessment-backend.herokuapp.com/users.json").then(complete).catch(failed);
     }
 
-    /*function editUser() {
-
-    }*/
+    function editUser(id, statusContent) {
+        return $http.put("http://js-assessment-backend.herokuapp.com/users/"+id+".json", statusContent).then(complete).catch(failed);
+    }
 
     function complete(response) {
         return response;
