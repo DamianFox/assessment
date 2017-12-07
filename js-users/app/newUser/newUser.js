@@ -3,6 +3,7 @@ angular.module('Js-Users-App').controller('NewUserCtrl', NewUserCtrl);
 
 function NewUserCtrl($route, $scope, userDataFactory){
 	$scope.user_created = false;
+	$scope.response_message = "";
 
 	$scope.submitNewUser = function () {
 
@@ -17,11 +18,15 @@ function NewUserCtrl($route, $scope, userDataFactory){
 	            if (response.status === 201) {
 	            	$scope.first_name = "";
 	            	$scope.last_name = "";
-	                $scope.user_created = true;
+	                $scope.response_message = "User created";
 	            }
 	        }).catch(function(error) {
 	            console.log(error);
 	        });
+		} else if($scope.first_name && !$scope.last_name){
+			$scope.response_message = "The last name should be specified";
+		} else if(!$scope.first_name && $scope.last_name){
+			$scope.response_message = "The first name should be specified";
 		}
 	    
 	}
