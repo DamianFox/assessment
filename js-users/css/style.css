@@ -27,6 +27,14 @@ p {
   font-size: .9rem;
 }
 
+.pagination li a {
+  cursor: pointer;
+}
+
+.pagination li.active {
+  background-color: #26a69a;
+}
+
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;

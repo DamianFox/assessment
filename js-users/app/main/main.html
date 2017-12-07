@@ -1,5 +1,5 @@
 <div class="page-header">
-    <h2 id="tables">Main</h2>
+    <h2>Main</h2>
 </div>
 <div ng-controller="UsersList">
 	<table class="table striped">
@@ -11,7 +11,8 @@
             </tr>
         </thead>
         <tbody>
-        	<tr ng-repeat="user in users | startFrom:currentPage*pageSize | limitTo:pageSize" ng-class="{'locked': user.status === 'locked'}">
+        	<!-- <tr ng-repeat="user in users | startFrom:currentPage*pageSize | limitTo:pageSize" ng-class="{'locked': user.status === 'locked'}"> -->
+            <tr ng-repeat="user in items" ng-class="{'locked': user.status === 'locked'}">
                 <td>{{user.last_name}}</td>
                 <td>{{user.first_name}}</td>
                 <td>{{user.created_at}}</td>
@@ -22,11 +23,34 @@
                 		Change Status
                 	</button>
                 </td>
+                <td>
+                    <a class="btn-floating btn" href="#!/edit?id={{user.id}}">
+                        <i class="large material-icons">mode_edit</i>
+                    </a>
+                </td>
             </tr>
         </tbody>
     </table>
     <div class="row">
-    	<div class="col s12 m4 l8">
+        <!-- pager -->
+        <ul ng-if="pager.pages.length" class="pagination">
+            <li ng-class="{disabled:pager.currentPage === 1}">
+                <a ng-click="setPage(1)">First</a>
+            </li>
+            <li ng-class="{disabled:pager.currentPage === 1}">
+                <a ng-click="setPage(pager.currentPage - 1)">Previous</a>
+            </li>
+            <li ng-repeat="page in pager.pages" ng-class="{active:pager.currentPage === page}">
+                <a ng-click="setPage(page)">{{page}}</a>
+            </li>               
+            <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
+                <a ng-click="setPage(pager.currentPage + 1)">Next</a>
+            </li>
+            <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
+                <a ng-click="setPage(pager.totalPages)">Last</a>
+            </li>
+        </ul>
+    	<!-- <div class="col s12 m4 l8">
 		    <button class="waves-effect waves-light btn btn-small" 
 		 		ng-disabled="currentPage == 0" 
 		 		ng-click="currentPage=currentPage-1">
@@ -38,7 +62,7 @@
 		    		ng-click="currentPage=currentPage+1">
 		        Next
 		    </button>
-	    </div>
+	    </div> -->
 	</div>
 	
 </div>
