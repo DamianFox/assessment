@@ -1,0 +1,23 @@
+<div class="page-header">
+    <h2>Edit User</h2>
+</div>
+<form class="col s12" ng-submit="editUser()" ng-controller="EditUserCtrl">
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="first_name" ng-model="first_name" type="text" class="validate" value="{{currentUser.first_name}}">
+            <label class="active" for="first_name">{{currentUser.first_name}}</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="last_name" ng-model="last_name" type="text" class="validate" value="{{currentUser.last_name}}">
+            <label class="active" for="last_name">{{currentUser.last_name}}</label>
+        </div>
+        <div class="input-field col s6">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+        <div class="input-field col s6">
+            {{response_message}}
+        </div>
+    </div>
+</form>
