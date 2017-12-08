@@ -11,7 +11,6 @@
             </tr>
         </thead>
         <tbody>
-        	<!-- <tr ng-repeat="user in users | startFrom:currentPage*pageSize | limitTo:pageSize" ng-class="{'locked': user.status === 'locked'}"> -->
             <tr ng-repeat="user in items" ng-class="{'locked': user.status === 'locked'}">
                 <td>{{user.last_name}}</td>
                 <td>{{user.first_name}}</td>
@@ -32,7 +31,7 @@
         </tbody>
     </table>
     <div class="row">
-        <!-- pager -->
+        <!-- Pagination -->
         <ul ng-if="pager.pages.length" class="pagination">
             <li ng-class="{disabled:pager.currentPage === 1}">
                 <a ng-click="setPage(1)"> &laquo; </a>

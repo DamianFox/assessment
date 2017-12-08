@@ -2,13 +2,12 @@ angular.module('Js-Users-App').controller('NewUserCtrl', NewUserCtrl);
 
 
 function NewUserCtrl($route, $scope, userDataFactory){
-	$scope.user_created = false;
 	$scope.response_message = "";
 
 	$scope.submitNewUser = function () {
 
 		// If the form doesn't contain any error
-		// perform the POST request
+		// performs the POST request
 		if(newUserForm.$valid) {
 			var postData = {
 	            first_name: $scope.first_name,

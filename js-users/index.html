@@ -13,44 +13,44 @@
 </head>
 <body ng-app="Js-Users-App">
 	<!-- Navigation bar -->
-    <nav class="white" role="navigation">
-  		<div class="nav-wrapper container">
-        	<a id="logo-container" href="#!/" class="brand-logo">Js Users</a>
-    		<ul class="right hide-on-med-and-down">
-      			<li>
-            		<a href="#!/new">New</a>
-  				</li>
-    		</ul>
-    		<ul id="nav-mobile" class="side-nav">
-          		<li>
-        			<a href="#!/new">New</a>
-          		</li>
-        	</ul>
-        	<a href="#" data-activates="nav-mobile" class="button-collapse">
-          		<i class="material-icons">menu</i>
-        	</a>
+  <nav class="white" role="navigation">
+		<div class="nav-wrapper container">
+      	<a id="logo-container" href="#!/" class="brand-logo">Js Users</a>
+  		  <ul class="right hide-on-med-and-down">
+    			<li>
+          		<a href="#!/new">New</a>
+				  </li>
+  		  </ul>
+  		  <ul id="nav-mobile" class="side-nav">
+      		<li>
+      			<a href="#!/new">New</a>
+      		</li>
+      	</ul>
+      	<a href="#" data-activates="nav-mobile" class="button-collapse">
+        		<i class="material-icons">menu</i>
+      	</a>
+	  </div>
+  </nav>
+  <!-- Main content -->
+  <div class="container">
+  	<div class="row">
+			<div ng-view=""></div>
 		</div>
-    </nav>
-    <!-- Main content -->
-    <div class="container">
-    	<div class="row">
-  			<div ng-view=""></div>
-  		</div>
-    </div>
+  </div>
 	
 
 
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
-  	<script src="node_modules/angular/angular.min.js"></script>
-  	<script src="node_modules/angular-route/angular-route.min.js"></script>
-  	<script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
-  	<script src="node_modules/lodash/lodash.min.js"></script>
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="node_modules/angular-route/angular-route.min.js"></script>
+	<script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
+	<script src="node_modules/lodash/lodash.min.js"></script>
 
-  	<script type="text/javascript" src="app/app.js"></script>
-  	<script type="text/javascript" src="app/main/main.js"></script>
-  	<script type="text/javascript" src="app/user-data-factory/user-data-factory.js"></script>
-  	<script type="text/javascript" src="app/newUser/newUser.js"></script>
-  	<script type="text/javascript" src="app/editUser/editUser.js"></script>
+	<script type="text/javascript" src="app/app.js"></script>
+	<script type="text/javascript" src="app/main/main.js"></script>
+	<script type="text/javascript" src="app/user-data-factory/user-data-factory.js"></script>
+	<script type="text/javascript" src="app/new-User/new-user.js"></script>
+	<script type="text/javascript" src="app/edit-user/edit-user.js"></script>
 
   
 </body>
