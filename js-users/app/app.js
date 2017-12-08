@@ -9,6 +9,9 @@ function config($routeProvider) {
 	.when("/new", {
 	  templateUrl: "/app/newUser/newUser.html"
 	})
+	.when("/edit", {
+	  templateUrl: "/app/editUser/editUser.html"
+	})
 	.otherwise({
 	  redirectTo: "/"
 	});
