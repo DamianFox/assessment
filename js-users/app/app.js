@@ -7,10 +7,10 @@ function config($routeProvider) {
 	  templateUrl: "/app/main/main.html"
 	})
 	.when("/new", {
-	  templateUrl: "/app/newUser/newUser.html"
+	  templateUrl: "/app/new-user/new-user.html"
 	})
 	.when("/edit", {
-	  templateUrl: "/app/editUser/editUser.html"
+	  templateUrl: "/app/edit-user/edit-user.html"
 	})
 	.otherwise({
 	  redirectTo: "/"

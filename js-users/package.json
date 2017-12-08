@@ -1,0 +1,32 @@
+{
+  "title": "Js-User",
+  "name": "Js-User",
+  "version": "1.0.0-alpha.1",
+  "description": "Js-User",
+  "keywords": [
+    "angular",
+    "html",
+    "frontend"
+  ],
+  "homepage": "www.damianofossa.com",
+  "license": "MIT",
+  "author": "Damiano Fossa",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DamianFox/assessment.git"
+  },
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-route": "^1.6.6",
+    "font-awesome": "4.7.0"
+  },
+  "devDependencies": {
+    "browser-sync": "2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "3.9.0",
+    "gulp-header": "1.8.9",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "3.0.0"
+  }
+}

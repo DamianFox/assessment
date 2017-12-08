@@ -10,7 +10,7 @@ function NewUserCtrl($route, $scope, userDataFactory){
 		if(newUserForm.$valid) {
 			var postData = {
 	            first_name: $scope.first_name,
-	            last_name: $scope.last_name,
+	            // last_name: $scope.last_name,
 	            status: "active"
 	        };
 
@@ -21,7 +21,7 @@ function NewUserCtrl($route, $scope, userDataFactory){
 	                $scope.response_message = "User created";
 	            }
 	        }).catch(function(error) {
-	            console.log(error);
+	            $scope.response_message = error;
 	        });
 		}	    
 	}

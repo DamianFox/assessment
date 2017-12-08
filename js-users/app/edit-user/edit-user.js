@@ -27,7 +27,7 @@ function EditUserCtrl($route, $routeParams, $scope, userDataFactory){
 	            	$scope.response_message = "User updated!";
 	            }
 	        }).catch(function(error) {
-	            console.log(error);
+	            $scope.response_message = error;
 	        });
 		} else if($scope.first_name && !$scope.last_name){
 			var putData = {
@@ -41,7 +41,7 @@ function EditUserCtrl($route, $routeParams, $scope, userDataFactory){
 	            	$scope.response_message = "User updated!";
 	            }
 	        }).catch(function(error) {
-	            console.log(error);
+	            $scope.response_message = error;
 	        });
 		} else if(!$scope.first_name && $scope.last_name){
 			var putData = {
@@ -55,7 +55,7 @@ function EditUserCtrl($route, $routeParams, $scope, userDataFactory){
 	            	$scope.response_message = "User updated!";
 	            }
 	        }).catch(function(error) {
-	            console.log(error);
+	            $scope.response_message = error;
 	        });
 		} else if(!$scope.first_name && !$scope.last_name){
 			$scope.response_message = "The inputs shouldn't be empty!";
