@@ -3,6 +3,7 @@ angular.module('Js-Users-App').controller('EditUserCtrl', EditUserCtrl);
 function EditUserCtrl($route, $routeParams, $scope, userDataFactory){
 	$scope.response_message = "";
 
+	// Get te id from the parameters
 	var id = $routeParams.id;
 
 	if(id){
@@ -14,6 +15,7 @@ function EditUserCtrl($route, $routeParams, $scope, userDataFactory){
 
 	$scope.editUser = function () {
 
+		// Populate the PUT request based on which input field is empty
 		if($scope.first_name && $scope.last_name){
 			var putData = {
 	            first_name: $scope.first_name,

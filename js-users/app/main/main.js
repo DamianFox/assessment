@@ -19,10 +19,10 @@ function UsersList($route, $scope, $filter, userDataFactory, PagerService){
             return;
         }
 
-        // get pager object from service
+        // Get pager object from service
         $scope.pager = PagerService.GetPager($scope.users.length, page);
 
-        // get current page of items
+        // Get current page of items
         $scope.items = $scope.users.slice($scope.pager.startIndex, $scope.pager.endIndex + 1);
     }
 
@@ -51,31 +51,31 @@ function UsersList($route, $scope, $filter, userDataFactory, PagerService){
 }
 
 function PagerService() {
-    // service definition
+    // Service definition
     var service = {};
  
     service.GetPager = GetPager;
  
     return service;
  
-    // service implementation
+    // Service implementation
     function GetPager(totalItems, currentPage, pageSize) {
-        // default to first page
+        // Default to first page
         currentPage = currentPage || 1;
  
-        // default page size is 10
+        // Default page size is 10
         pageSize = pageSize || 10;
  
-        // calculate total pages
+        // Calculate total pages
         var totalPages = Math.ceil(totalItems / pageSize);
  
         var startPage, endPage;
         if (totalPages <= 10) {
-            // less than 10 total pages so show all
+            // Less than 10 total pages so show all
             startPage = 1;
             endPage = totalPages;
         } else {
-            // more than 10 total pages so calculate start and end pages
+            // More than 10 total pages so calculate start and end pages
             if (currentPage <= 6) {
                 startPage = 1;
                 endPage = 10;
@@ -88,14 +88,14 @@ function PagerService() {
             }
         }
  
-        // calculate start and end item indexes
+        // Calculate start and end item indexes
         var startIndex = (currentPage - 1) * pageSize;
         var endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
  
-        // create an array of pages to ng-repeat in the pager control
+        // Create an array of pages to ng-repeat in the pager control
         var pages = _.range(startPage, endPage + 1);
  
-        // return object with all pager properties required by the view
+        // Return object with all pager properties required by the view
         return {
             totalItems: totalItems,
             currentPage: currentPage,

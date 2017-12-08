@@ -7,10 +7,12 @@ function NewUserCtrl($route, $scope, userDataFactory){
 
 	$scope.submitNewUser = function () {
 
+		// If the form doesn't contain any error
+		// perform the POST request
 		if(newUserForm.$valid) {
 			var postData = {
 	            first_name: $scope.first_name,
-	            // last_name: $scope.last_name,
+	            last_name: $scope.last_name,
 	            status: "active"
 	        };
 
