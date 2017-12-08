@@ -1,7 +1,7 @@
 <div class="page-header">
     <h2>Edit User</h2>
 </div>
-<form class="col s12" ng-submit="editUser()" ng-controller="EditUserCtrl">
+<form name="editUserForm" class="col s12" ng-submit="editUser()" ng-controller="EditUserCtrl">
     <div class="row">
         <div class="input-field col s6">
             <input id="first_name" ng-model="first_name" type="text" class="validate" value="{{currentUser.first_name}}">
@@ -12,7 +12,7 @@
             <label class="active" for="last_name">{{currentUser.last_name}}</label>
         </div>
         <div class="input-field col s6">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <button class="btn waves-effect waves-light" type="submit" name="action" ng-disabled="editUserForm.$invalid">Submit
                 <i class="material-icons right">send</i>
             </button>
         </div>

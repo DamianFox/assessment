@@ -7,7 +7,7 @@ function NewUserCtrl($route, $scope, userDataFactory){
 
 	$scope.submitNewUser = function () {
 
-		if($scope.first_name && $scope.last_name){
+		if(newUserForm.$valid) {
 			var postData = {
 	            first_name: $scope.first_name,
 	            last_name: $scope.last_name,
@@ -23,11 +23,6 @@ function NewUserCtrl($route, $scope, userDataFactory){
 	        }).catch(function(error) {
 	            console.log(error);
 	        });
-		} else if($scope.first_name && !$scope.last_name){
-			$scope.response_message = "The last name should be specified";
-		} else if(!$scope.first_name && $scope.last_name){
-			$scope.response_message = "The first name should be specified";
-		}
-	    
+		}	    
 	}
 }

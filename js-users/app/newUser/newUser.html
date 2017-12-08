@@ -1,18 +1,20 @@
 <div class="page-header">
     <h2>New User</h2>
 </div>
-<form class="col s12" ng-submit="submitNewUser()" ng-controller="NewUserCtrl">
+<form name="newUserForm" class="col s12" ng-submit="submitNewUser()" ng-controller="NewUserCtrl">
     <div class="row">
         <div class="input-field col s6">
-            <input id="first_name" ng-model="first_name" type="text" class="validate">
+            <input id="first_name" ng-model="first_name" type="text" class="validate" required>
             <label for="first_name">First Name</label>
+            <p ng-show="newUserForm.first_name.$invalid && newUserForm.first_name.$dirty" class="help-block">Your first name is required.</p>
         </div>
         <div class="input-field col s6">
-            <input id="last_name" ng-model="last_name" type="text" class="validate">
+            <input id="last_name" ng-model="last_name" type="text" class="validate" required>
             <label for="last_name">Last Name</label>
+            <p ng-show="newUserForm.last_name.$invalid && newUserForm.last_name.$dirty" class="help-block">Your last name is required.</p>
         </div>
         <div class="input-field col s6">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <button class="btn waves-effect waves-light" type="submit" name="action" ng-disabled="newUserForm.$invalid">Submit
                 <i class="material-icons right">send</i>
             </button>
         </div>
