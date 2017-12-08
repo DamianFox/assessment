@@ -13,6 +13,12 @@ p {
   line-height: 2rem;
 }
 
+h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin: 1.78rem 0 4.6rem 0;
+}
+
 .button-collapse {
   color: #26a69a;
 }
@@ -25,6 +31,10 @@ p {
 .btn-small {
   padding: 0 1rem;
   font-size: .9rem;
+}
+
+.pagination {
+  text-align: center;
 }
 
 .pagination li a {
