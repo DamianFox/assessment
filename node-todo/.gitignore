@@ -1,5 +1,4 @@
-node_modules/
-../js-numerals/
+node_modules
 
 #System Files
 .DS_Store
