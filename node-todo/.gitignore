@@ -1,0 +1,6 @@
+node_modules/
+../js-numerals/
+
+#System Files
+.DS_Store
+npm-debug.log
