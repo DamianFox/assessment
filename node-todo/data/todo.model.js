@@ -17,7 +17,7 @@ var todoSchema = new mongoose.Schema({
     max : 5
   }
 },{
-    versionKey: false // You should be aware of the outcome after set to false
+    versionKey: false
 });
 
 mongoose.model('Todo', todoSchema);
