@@ -1,0 +1,13 @@
+[{
+    "text": "Todo 1",
+    "priority": 5,
+    "done": false
+}, {
+    "text": "Todo 2",
+    "priority": 4,
+    "done": false
+}, {
+    "text": "Todo 3",
+    "priority": 3,
+    "done": false
+}]
