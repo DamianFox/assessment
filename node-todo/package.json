@@ -1,0 +1,32 @@
+{
+  "name": "node-todo",
+  "version": "1.0.0",
+  "description": "Node Todo Application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "NODE_ENV=test mocha --compilers js:babel-core/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DamianFox/assessment.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Damiano Fossa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DamianFox/assessment/issues"
+  },
+  "homepage": "https://damianofossa.com",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "mongodb": "^2.1.7",
+    "mongoose": "^4.4.8"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3"
+  }
+}
