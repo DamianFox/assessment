@@ -29,11 +29,7 @@ function UsersList($route, $scope, $filter, userDataFactory, PagerService){
     // Change the status of the user
     $scope.changeStatus = function(id, status){
 
-        if(status == "locked"){
-            newStatus = "active";
-        } else {
-            newStatus = "locked";
-        }
+        status == "locked" ? newStatus =  "active" : newStatus = "locked";
 
         var putData = {
             id: id,
